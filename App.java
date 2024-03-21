@@ -1,7 +1,6 @@
+import java.util.Scanner;
 public class App {
 
-
-    
     public class Node {
         String activity_name;
         int index;
@@ -17,36 +16,31 @@ public class App {
             remaining_hours = total_hours - completed_hours; // Update remaining_hours here
         }
 
+        public void printtable() {
+            System.out.println(index + ":");
+            System.out.println("Activity Name: " + activity_name);
+            System.out.println("Total Hours: " + total_hours);
+            System.out.println("Completed Hours: " + completed_hours);
+            System.out.println("Remaining Hours: " + remaining_hours);
+        }
+    }
 
+    public static Node[] list = new Node[10];
+    public static int n = 0;
 
-
+    public static void adding() {
         
+
+
+
+        list[n] = activity;
+        n++;
     }
-
-
-    App app = new App();
-
-
-        // in this section we will work on making a list of activities
-    App.Node[] list = new App.Node[10];
-    int n=0;
-
-
-    public static void adding(Node activity){
-
-
-            list[n] = activity; 
-
-    }
-
-
-
 
     public static void main(String[] args) {
-        App app = new App(); // Create an instance of the outer class
-        App.Node node = app.new Node(4); // Create an instance of the inner class using the outer class instance
+        App app = new App();
+        Node node1 = app.new Node(0);
 
-        // Accessing instance variables through the instance of the inner class
-        System.out.println("index: " + node.index);
+        node1.printtable();
     }
 }
