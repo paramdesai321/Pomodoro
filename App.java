@@ -51,10 +51,50 @@ public class App {
     	}
     }
 
+    public void rename(Node node){
+
+    		Scanner	scan= new Scanner(System.in);
+    		System.out.print("Please Rename the Activity: ");
+    		node.activity_name = scan.next();
+
+    }
+
+    public void total_hours(Node node,int total_hours){
+
+
+    }
+
+    public void options(){
+
+    	Scanner scan  = new Scanner(System.in);
+
+    	printlist();
+    	System.out.print("Choose an activity from above: ");
+    	int choice = scan.nextInt();
+    	System.out.println("----------Options-----");
+    	System.out.println("-----------------------");
+    	System.out.println("1. Rename the Activity");
+    	System.out.println("2. Change Total Hours");
+    	System.out.println("3. Change Completed Hours");
+    	System.out.println("4. Add an activity");
+    	System.out.println("5. Delete an activity");
+    	System.out.println("6. Quit");
+    	int option = scan.nextInt();
+
+    	switch(option){
+
+    	case 1:
+    		rename(list[choice]);
+    	default:
+    		System.out.println("Not a valid choice, try again!");
+
+
+    	}
+    }
+
     public static void main(String[] args) {
         App app = new App();
-        app.adding(); // Add node1 to the list
-        app.adding();
+
         app.printlist();
     }
 }
