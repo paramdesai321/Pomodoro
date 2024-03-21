@@ -14,10 +14,10 @@ public class App {
             total_hours = 0;
             completed_hours = 0;
             activity_name = null;
-            remaining_hours = total_hours - completed_hours; // Update remaining_hours here
         }
 
         public void printtable() {
+            remaining_hours = total_hours - completed_hours; // Update remaining_hours here
             System.out.println(index + ":");
             System.out.println("Activity Name: " + activity_name);
             System.out.println("Total Hours: " + total_hours);
@@ -38,15 +38,23 @@ public class App {
         activity.total_hours = scan.nextInt();
         System.out.print("Completed Hours: ");
         activity.completed_hours = scan.nextInt();
-        System.out.print("Remaining Hours: "+ activity.remaining_hours);
 
         list[n] = activity;
         n++;
     }
 
+    public void printlist(){
+
+    	for(int i=0;i<n;i++){
+
+    		System.out.println((i+1)+". "+list[i].activity_name);
+    	}
+    }
+
     public static void main(String[] args) {
         App app = new App();
+        app.adding(); // Add node1 to the list
         app.adding();
-        app.list[0].printtable();
+        app.printlist();
     }
 }
