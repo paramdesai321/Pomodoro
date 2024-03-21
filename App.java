@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class App {
 
     public class Node {
@@ -25,13 +26,19 @@ public class App {
         }
     }
 
-    public static Node[] list = new Node[10];
-    public static int n = 0;
+    public Node[] list = new Node[10];
+    public int n = 0;
 
-    public static void adding() {
-        
-
-
+    public void adding() {
+        Scanner scan = new Scanner(System.in);
+        Node activity = new Node(n);
+        System.out.print("Activity Name: ");
+        activity.activity_name = scan.nextLine();
+        System.out.print("Total Hours: ");
+        activity.total_hours = scan.nextInt();
+        System.out.print("Completed Hours: ");
+        activity.completed_hours = scan.nextInt();
+        System.out.print("Remaining Hours: "+ activity.remaining_hours);
 
         list[n] = activity;
         n++;
@@ -39,8 +46,7 @@ public class App {
 
     public static void main(String[] args) {
         App app = new App();
-        Node node1 = app.new Node(0);
-
-        node1.printtable();
+        app.adding();
+        app.list[0].printtable();
     }
 }
