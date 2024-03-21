@@ -1,4 +1,7 @@
 public class App {
+
+
+    
     public class Node {
         String activity_name;
         int index;
@@ -13,7 +16,31 @@ public class App {
             activity_name = null;
             remaining_hours = total_hours - completed_hours; // Update remaining_hours here
         }
+
+
+
+
+        
     }
+
+
+    App app = new App();
+
+
+        // in this section we will work on making a list of activities
+    App.Node[] list = new App.Node[10];
+    int n=0;
+
+
+    public static void adding(Node activity){
+
+
+            list[n] = activity; 
+
+    }
+
+
+
 
     public static void main(String[] args) {
         App app = new App(); // Create an instance of the outer class
